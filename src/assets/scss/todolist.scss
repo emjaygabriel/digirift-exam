@@ -1,0 +1,153 @@
+// creating variables
+$normal_button_color: #246CAA;
+$bright_color: #D84855;
+$selected_color: #246C55;
+$header_footer_color: #eee;
+$task_item_border: #eee;
+
+// scss styles of to do list
+body {
+    #app {
+        padding-top: 3rem;
+        .main-title { 
+            text-align: center;
+            margin-bottom: 1rem; 
+            font-size: 50px;
+            font-weight: normal;
+        }
+        .standard-tasks-card {
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 1px 1px 5px #000;
+            border-radius: 10px;
+            .tasks-status-bar {
+                background-color: $header_footer_color;
+                padding: 1rem;
+                border-radius: 10px 10px 0 0; 
+                text-align: right;
+                .status-text {
+                    cursor: pointer;
+                    display: inline-block;
+                    padding: 0.5rem 0.75rem;
+                    margin-right: 0.5rem;
+                    border-radius: 50px;
+                    font-size: 14px;
+                    font-weight: bold;
+                    .count {
+                        background-color: #fff;
+                        color: $normal_button_color;
+                        display: inline-block;
+                        text-align: center;
+                        border-radius: 30px;
+                        margin-left: 0.5rem;
+                        padding: 0.15rem 0.55rem;
+                    }
+                }
+                .status-text:last-child {
+                    margin-right: 0;
+                }
+                .normal {
+                    background-color: $normal_button_color;
+                    color: #fff;
+                }
+                .red {
+                    background-color: $bright_color;
+                    color: #fff;
+                    svg { 
+                        margin-right: 0.5rem;
+                    }
+                }
+                .active {
+                    background-color: $selected_color;
+                    color: #fff;
+                }
+            }
+            .tasks-list {
+                padding: 1rem;
+                h3 { 
+                    text-align: center;
+                    margin: 2rem auto;
+                    font-size: 2rem;
+                    font-weight: normal;
+                }
+                .task {
+                    border-radius: 5px;
+                    border: 1px solid $task_item_border;
+                    padding: 1rem;
+                    margin-bottom: 1rem;
+                    font-weight: normal;
+                    position: relative;
+                    font-size: 1.3rem;
+                    .delete-task {
+                        cursor: pointer;
+                        position: absolute;
+                        top: 0.5rem;
+                        right: 1rem;
+                        font-size: 1.5rem;
+                        color: $bright_color;
+                        display: none;
+                    }
+                    .check-icon { 
+                        cursor: pointer;
+                        margin-right: 0.5rem;
+                    }
+                }
+                .task:hover {
+                    .delete-task {
+                        display: inline-block;
+                    }
+                }
+                .task:last-child {
+                    margin-bottom: 0;
+                }
+                .completed {
+                    background-color: #eee;
+                    color: #aaa;
+                    .task-name {
+                        text-decoration: line-through;
+                    }
+                }
+            }
+            .tasks-action-bar {
+                padding: 1rem;
+                background-color: $header_footer_color;
+                text-align: center;
+                border-radius: 0 0 15px 15px;
+                .text-entry {
+                    border: 2px solid $normal_button_color;
+                    border-radius: 30px;
+                    padding: 1rem;
+                    text-align: left;
+                    position: relative;
+                    .input {
+                        border: 0;
+                        width: 100%;
+                        font-size: 20px;
+                    }
+                    .input:focus-visible { border: none; outline: none; }
+                    .add-task {
+                        position: absolute;
+                        top: 0.5rem; 
+                        right: 0.5rem;
+                        svg {
+                            font-size: 46px;
+                            color: $normal_button_color
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .status_message {
+        // font-size: 1.3rem;
+        // text-align: center;
+        margin-top: 2rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        // background-color: #444;
+        // padding: 0.5rem;
+        // color: #fff;
+    }
+}
